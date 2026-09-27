@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE } from '../site.config.js';
+import Analytics from '@vercel/analytics/astro';
 
 const { title, description, current = '', noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
@@ -26,8 +27,6 @@ const canonical = new URL(Astro.url.pathname, SITE.url).href;
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <slot name="head" />
-    <!-- Vercel Web Analytics: switch it on in the Vercel dashboard (Analytics tab). -->
-    <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -36,6 +35,7 @@ const canonical = new URL(Astro.url.pathname, SITE.url).href;
       <slot />
     </main>
     <Footer />
+    <Analytics />
     <script>
       // The Minutes: post straight to MailerLite without leaving the page.
       document.querySelectorAll('form[data-minutes]').forEach((form) => {
