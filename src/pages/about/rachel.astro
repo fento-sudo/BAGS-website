@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import MinutesStrip from '../../components/MinutesStrip.astro';
+import { SITE } from '../../site.config.js';
+
+const jsonld = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Rachel L',
+  jobTitle: 'Chairperson',
+  memberOf: { '@type': 'Organization', name: 'Book and Gin Society', url: SITE.url },
+  url: `${SITE.url}/about/rachel`,
+};
+---
+<Base
+  current="about"
+  title="Rachel L, Chairperson of the Book and Gin Society"
+  description="Founding member and self-elected chairperson of a Wellington book club that meets at a gin distillery."
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonld)} />
+  <section class="page-head">
+    <h1>Rachel L, Chairperson</h1>
+  </section>
+  <article class="prose">
+    <p>I'm a founding member of the Book and Gin Society and its self-elected chairperson, a position nobody has yet found the energy to contest. We started BAGS for a simple reason: to spend time with friends and talk about books.</p>
+    <p>I read around a hundred books a year and bring only the few that stay with me. I'm one of the select few on the <a href="/shelf/hard-non-fiction">Hard Non-Fiction shelf</a>. As chairperson I look after this site, the shelf and The Minutes, which mainly means making sure that what gets said on the last Friday doesn't get lost.</p>
+  </article>
+  <MinutesStrip id="rachel-minutes-email" />
+</Base>

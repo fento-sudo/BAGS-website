@@ -1,0 +1,12 @@
+---
+const { current = '' } = Astro.props;
+const is = (key) => (current === key ? 'page' : undefined);
+---
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Book and Gin Society, home">BAGS</a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="/shelf" aria-current={is('shelf')}>The Shelf</a>
+    <a href="/about" aria-current={is('about')}>About</a>
+    <a class="nav-minutes" href="/minutes" aria-current={is('minutes')}>The Minutes</a>
+  </nav>
+</header>

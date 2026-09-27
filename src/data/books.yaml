@@ -1,0 +1,128 @@
+# The Shelf. One entry per book, per meeting.
+# Add books with:  npm run add-book
+#
+# category: soft-fiction | hard-fiction | soft-non-fiction | hard-non-fiction
+# meeting:  "YYYY-MM" (keep the quotes)
+# note:     the member's one-line verdict, in their own words (optional)
+#
+# APRIL 2026 NEEDS CHECKING BEFORE LAUNCH: categories and the Feynman warning
+# are Claude's guesses, and two authors are blank.
+
+- title: The Correspondent
+  author: Virginia Evans
+  brought_by: Kate
+  meeting: "2026-04"
+  category: soft-fiction
+  changed_hands: true
+
+- title: Mother Mary Comes to Me
+  author: Arundhati Roy
+  brought_by: Kate
+  meeting: "2026-04"
+  category: soft-non-fiction
+  changed_hands: true
+
+- title: Mad Mabel
+  author: Sally Hepworth
+  brought_by: Kate
+  meeting: "2026-04"
+  category: soft-fiction
+  changed_hands: true
+
+- title: The Running Ground
+  author: Nicholas Thompson
+  brought_by: Kate
+  meeting: "2026-04"
+  category: soft-non-fiction
+  changed_hands: true
+
+- title: "The Uncool: A Memoir"
+  author: Cameron Crowe
+  brought_by: Kate
+  meeting: "2026-04"
+  category: soft-non-fiction
+
+- title: Fundamentally
+  author: Nussaibah Younis
+  brought_by: Kate
+  meeting: "2026-04"
+  category: soft-fiction
+
+- title: The Traitors
+  author: ""
+  brought_by: Kate
+  meeting: "2026-04"
+  category: soft-non-fiction
+  note: Listened to on audio.
+
+- title: The Women
+  author: Kristin Hannah
+  brought_by: Bex
+  meeting: "2026-04"
+  category: soft-fiction
+
+- title: A Different Kind of Power
+  author: Jacinda Ardern
+  brought_by: Weller
+  meeting: "2026-04"
+  category: soft-non-fiction
+
+- title: Lessons in Chemistry
+  author: Bonnie Garmus
+  brought_by: Weller
+  meeting: "2026-04"
+  category: soft-fiction
+  note: Still struggling.
+
+- title: Hidden Valley Road
+  author: Robert Kolker
+  brought_by: Rachel
+  meeting: "2026-04"
+  category: hard-non-fiction
+
+- title: Stalin and the Scientists
+  author: Simon Ings
+  brought_by: Rachel
+  meeting: "2026-04"
+  category: hard-non-fiction
+
+- title: How to Share an Egg
+  author: ""
+  brought_by: Stephanie
+  meeting: "2026-04"
+  category: soft-non-fiction
+  note: A culinary memoir.
+
+- title: Wild Heart
+  author: Suzanne Rodriguez
+  brought_by: Stephanie
+  meeting: "2026-04"
+  category: soft-non-fiction
+
+- title: Committed
+  author: Suzanne Scanlon
+  brought_by: Stephanie
+  meeting: "2026-04"
+  category: hard-non-fiction
+  note: A feminist take on madness and mental illness.
+
+- title: Surely You're Joking, Mr. Feynman!
+  author: Richard P. Feynman
+  brought_by: Stephanie
+  meeting: "2026-04"
+  category: soft-non-fiction
+  note: Very dated.
+  warning: true
+
+- title: Stinkbug
+  author: Sinéad Stubbins
+  brought_by: Stephanie
+  meeting: "2026-04"
+  category: soft-fiction
+  note: Corporate retreat. Weird.
+
+- title: Murderland
+  author: Caroline Fraser
+  brought_by: Stephanie
+  meeting: "2026-04"
+  category: soft-non-fiction

@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import MinutesStrip from '../../components/MinutesStrip.astro';
+---
+<Base
+  current="about"
+  title="About the Book and Gin Society"
+  description="How a New Zealand book club with no set book, a written charter and a gin distillery for a venue actually works."
+>
+  <section class="page-head">
+    <h1>About</h1>
+  </section>
+  <article class="prose">
+    <p>The Book and Gin Society is a book club in Wellington, New Zealand. We meet on the last Friday of every month, usually at Southward Distillery in Lyall Bay, and we have done since February 2025, when we signed a charter we take about as seriously as you'd expect.</p>
+    <p>There's no set book. Each member brings whatever they've been reading and talks about what it meant to them. Some of us read a hundred books a year, and some of us are mainly here for the gin. Somehow the conversation always comes back to the books.</p>
+
+    <h2>How a meeting runs</h2>
+    <p>A toast opens the meeting. Each member talks about the book they've brought, whether they loved it or regret ever picking it up. Books change hands, arguments stay civil, and a toast closes the evening. Afterwards, the list of everything we discussed goes out as <a href="/minutes">The Minutes</a> and onto <a href="/shelf">the shelf</a>.</p>
+
+    <h2>The rules, briefly</h2>
+    <p>Every book is filed as Soft or Hard, Fiction or Non-Fiction. Gin is optional, and non-alcoholic drinks are poured with equal ceremony. Dogs are welcome and don't need approval. Membership is by invitation, and meetings are in person only.</p>
+
+    <p>The shelf and The Minutes are looked after by <a href="/about/rachel">Rachel L, Chairperson</a>.</p>
+  </article>
+  <MinutesStrip id="about-minutes-email" />
+</Base>

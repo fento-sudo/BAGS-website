@@ -1,0 +1,11 @@
+---
+import MinutesForm from './MinutesForm.astro';
+const { id = 'minutes-email' } = Astro.props;
+---
+<section class="minutes minutes--strip" aria-labelledby={`${id}-title`}>
+  <div>
+    <h2 id={`${id}-title`}>The Minutes.</h2>
+    <p>Every book we discussed, sent after the last Friday of each month.</p>
+  </div>
+  <MinutesForm id={id} />
+</section>

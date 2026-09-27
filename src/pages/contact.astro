@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../site.config.js';
+const ready = !SITE.contactEmail.startsWith('[');
+---
+<Base
+  title="Contact the Book and Gin Society"
+  description="How to get in touch with the Book and Gin Society, a book club in Wellington, New Zealand."
+>
+  <section class="page-head"><h1>Contact</h1></section>
+  <article class="prose">
+    {ready ? (
+      <p>Write to us at <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.</p>
+    ) : (
+      <p class="placeholder">TODO before launch: set contactEmail in src/site.config.js.</p>
+    )}
+    <p>Membership is by invitation and meetings are in person only, so we can't take new members through this site.</p>
+  </article>
+</Base>

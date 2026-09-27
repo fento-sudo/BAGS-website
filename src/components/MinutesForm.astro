@@ -1,0 +1,14 @@
+---
+import { SITE } from '../site.config.js';
+const { id } = Astro.props;
+---
+<form class="minutes-form" action={SITE.mailerliteAction} method="post" data-minutes novalidate>
+  <label for={id}>Email address</label>
+  <div class="minutes-form__row">
+    <input id={id} type="email" name="fields[email]" required autocomplete="email" placeholder="you@example.com" />
+    <button type="submit">Send me the minutes</button>
+  </div>
+  <input type="hidden" name="ml-submit" value="1" />
+  <input type="hidden" name="anticsrf" value="true" />
+  <p class="minutes-form__status" role="status" aria-live="polite"></p>
+</form>

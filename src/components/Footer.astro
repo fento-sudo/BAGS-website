@@ -1,0 +1,17 @@
+---
+import { books } from '../lib/books.js';
+import { SITE } from '../site.config.js';
+---
+<footer class="site-footer">
+  <div class="site-footer__mark" aria-hidden="true">BAGS</div>
+  <div class="site-footer__row">
+    <p>{books.length} books discussed since {SITE.founded}. Assembled with a splash of juniper and the turn of a page.</p>
+    <nav aria-label="Footer">
+      <a href="/shelf">The Shelf</a>
+      <a href="/about">About</a>
+      <a href="/minutes">The Minutes</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </nav>
+  </div>
+</footer>

@@ -1,0 +1,10 @@
+---
+import { CATEGORIES } from '../lib/books.js';
+const { current = 'all' } = Astro.props;
+---
+<nav class="catnav" aria-label="Shelf categories">
+  <a href="/shelf" aria-current={current === 'all' ? 'page' : undefined}>All books</a>
+  {CATEGORIES.map((c) => (
+    <a href={`/shelf/${c.slug}`} aria-current={current === c.slug ? 'page' : undefined}>{c.name}</a>
+  ))}
+</nav>

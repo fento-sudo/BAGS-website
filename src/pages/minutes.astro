@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import MinutesForm from '../components/MinutesForm.astro';
+---
+<Base
+  current="minutes"
+  title="The Minutes: The Book and Gin Society Newsletter"
+  description="A short monthly note listing every book the Book and Gin Society discussed, sent after the last Friday of each month."
+>
+  <section class="minutes minutes--full" aria-labelledby="minutes-title" style="min-height: 60vh">
+    <div class="minutes__copy">
+      <h1 id="minutes-title" style="margin: 0; font-size: clamp(56px, 8.3vw, 120px); line-height: 0.9; font-weight: 700; letter-spacing: -0.045em">The Minutes.</h1>
+      <p>After every meeting, a short note goes out listing every book we discussed. It's the next best thing to being there, and considerably cheaper.</p>
+    </div>
+    <div aria-hidden="true"></div>
+    <MinutesForm id="minutes-page-email" />
+  </section>
+</Base>

@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import CategoryNav from '../../components/CategoryNav.astro';
+import BookList from '../../components/BookList.astro';
+import WarningLegend from '../../components/WarningLegend.astro';
+import MinutesStrip from '../../components/MinutesStrip.astro';
+import { books, CATEGORIES, plural } from '../../lib/books.js';
+
+export function getStaticPaths() {
+  return CATEGORIES.map((c, i) => ({ params: { category: c.slug }, props: { cat: c, index: i } }));
+}
+const { cat, index } = Astro.props;
+const list = books.filter((b) => b.category === cat.slug);
+---
+<Base
+  current="shelf"
+  title={`${cat.name} Books: Book Club Recommendations From the Book and Gin Society`}
+  description={`${cat.name} books recommended by members of a Wellington book club, with who brought each one and what they thought.`}
+>
+  <section class="page-head">
+    <h1>The Shelf</h1>
+    <div aria-hidden="true"></div>
+    <p>Every book the Book and Gin Society has discussed since February 2025, filed the way we file them, with the newest at the top.</p>
+  </section>
+  <CategoryNav current={cat.slug} />
+  <section class="cat-intro" aria-labelledby="cat-title">
+    <div>
+      <p class="label" style="color: var(--grey); margin-bottom: 12px">Category {index + 1} of {CATEGORIES.length}</p>
+      <h2 id="cat-title">{cat.name}</h2>
+      <p class="count">{plural(list.length, 'book', 'books')}</p>
+    </div>
+    <div aria-hidden="true"></div>
+    <div class="cat-intro__copy">
+      <p>{cat.intro}</p>
+      <p class="muted">{cat.detail}</p>
+    </div>
+  </section>
+  <div class="shelf">
+    {list.length > 0 ? (
+      <BookList books={list} third="meeting" />
+    ) : (
+      <p class="empty">Nothing filed here yet.</p>
+    )}
+    {list.some((b) => b.warning) && <WarningLegend />}
+  </div>
+  <MinutesStrip id="cat-minutes-email" />
+</Base>

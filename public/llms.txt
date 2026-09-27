@@ -1,0 +1,18 @@
+# Book and Gin Society
+
+> A book club in Wellington, New Zealand, that meets monthly, usually at Southward Distillery in Lyall Bay. There is no set book: members bring what they have been reading and discuss it. This site lists every book the club has discussed.
+
+## Key facts
+- Meets on the last Friday of every month, usually at Southward Distillery, Lyall Bay, Wellington, in person only
+- Founded under a written charter signed in February 2025
+- No assigned reading; members bring their own books
+- Books are classified as Soft Fiction, Hard Fiction, Soft Non-Fiction or Hard Non-Fiction
+- Each shelf entry names the member who brought the book; some are marked "Brought as a warning"
+- Membership is by invitation
+- Non-alcoholic drinks are always available
+
+## Key pages
+- [Shelf](https://bookandginsociety.com/shelf): every book discussed, by category
+- [About](https://bookandginsociety.com/about): how the club works
+- [The Minutes](https://bookandginsociety.com/minutes): monthly newsletter of books discussed
+- [Rachel L](https://bookandginsociety.com/about/rachel): founding member and chairperson

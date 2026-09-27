@@ -1,0 +1,35 @@
+---
+import Base from '../../layouts/Base.astro';
+import CategoryNav from '../../components/CategoryNav.astro';
+import BookList from '../../components/BookList.astro';
+import WarningLegend from '../../components/WarningLegend.astro';
+import MinutesStrip from '../../components/MinutesStrip.astro';
+import { books, groupByMeeting, plural } from '../../lib/books.js';
+
+const meetings = groupByMeeting(books);
+---
+<Base
+  current="shelf"
+  title="Book Club Recommendations: The Book and Gin Society Shelf"
+  description="Every book our club has discussed since February 2025, sorted into Soft and Hard Fiction and Non-Fiction, with who brought each one and why."
+>
+  <section class="page-head">
+    <h1>The Shelf</h1>
+    <div aria-hidden="true"></div>
+    <p>Every book the Book and Gin Society has discussed since February 2025, filed the way we file them, with the newest at the top.</p>
+  </section>
+  <CategoryNav current="all" />
+  <div class="shelf shelf--top">
+    {meetings.map((m) => (
+      <section class="meeting" aria-labelledby={`m-${m.meeting}`}>
+        <div class="meeting-head">
+          <h2 id={`m-${m.meeting}`}>{m.label}</h2>
+          <p>{plural(m.books.length, 'book', 'books')}, {plural(m.members, 'member', 'members')}{m.changedHands > 0 && `, ${m.changedHands} changed hands`}</p>
+        </div>
+        <BookList books={m.books} third="category" />
+      </section>
+    ))}
+    <WarningLegend />
+  </div>
+  <MinutesStrip id="shelf-minutes-email" />
+</Base>

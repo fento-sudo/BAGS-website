@@ -1,0 +1,29 @@
+---
+import { categoryName, meetingLabel } from '../lib/books.js';
+// third: 'category' on the full shelf, 'meeting' on a category page
+const { books, third = 'category' } = Astro.props;
+---
+<div class="book-cols book-head" aria-hidden="true">
+  <div>Title</div><div>Brought by</div><div>{third === 'category' ? 'Filed under' : 'Meeting'}</div><div></div>
+</div>
+<ul class="booklist">
+  {books.map((b) => (
+    <li class="book book-cols">
+      <div class="book__main">
+        <h3 class="book__title">{b.title}</h3>
+        {b.author && <span class="book__author">{b.author}</span>}
+        {b.note && <span class="book__note">“{b.note}”</span>}
+      </div>
+      <div class="book__by">
+        <span class="visually-hidden">Brought by </span>{b.brought_by}
+        {b.changed_hands && <span class="book__hands">Changed hands</span>}
+      </div>
+      {third === 'category' ? (
+        <div class:list={['book__third', { 'is-hnf': b.category === 'hard-non-fiction' }]}>{categoryName(b.category)}</div>
+      ) : (
+        <div class="book__third">{meetingLabel(b.meeting)}</div>
+      )}
+      <div class="book__tag">{b.warning && <span class="tag-warning">Brought as a warning</span>}</div>
+    </li>
+  ))}
+</ul>
